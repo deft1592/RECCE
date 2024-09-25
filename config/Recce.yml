@@ -1,0 +1,32 @@
+model:
+  name: Recce
+  num_classes: 1
+config:
+  lambda_1: 0.1
+  lambda_2: 0.1
+  distribute:
+    backend: gloo
+  optimizer:
+    name: adam
+    lr: 0.0002
+    weight_decay: 0.00001
+  scheduler:
+    name: StepLR
+    step_size: 22500
+    gamma: 0.5
+  resume: False
+  resume_best: False
+  id: Celeb_df
+  loss: binary_ce
+  metric: Acc
+  debug: False
+  device: "cuda:0"
+data:
+  train_batch_size: 1
+  val_batch_size: 1
+  test_batch_size: 1
+  name: CelebDF
+  file: "./config/dataset/celeb_df.yml"
+  train_branch: "train_cfg"
+  val_branch: "test_cfg"
+  test_branch: "test_cfg"

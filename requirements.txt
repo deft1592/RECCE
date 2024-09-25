@@ -1,0 +1,5 @@
+Albumentations==1.0.3
+Timm==0.3.4
+TensorboardX==2.1
+Scipy==1.5.2
+PyYaml==5.3.1
